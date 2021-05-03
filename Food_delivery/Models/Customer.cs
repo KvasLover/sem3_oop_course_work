@@ -14,5 +14,6 @@ namespace Food_delivery.Models
         public string password { get; set; }
         public string phone_number { get; set; }
         public ICollection<Order> Orders { get; set; }
+        /**/
     }
 }
