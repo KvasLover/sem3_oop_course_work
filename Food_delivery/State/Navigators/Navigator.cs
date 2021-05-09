@@ -1,4 +1,5 @@
 ﻿using Food_delivery.Commands;
+using Food_delivery.Models;
 using Food_delivery.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Windows.Input;
 
 namespace Food_delivery.State.Navigators
 {
-    class Navigator : INavigator, INotifyPropertyChanged
+    class Navigator : ObservableObject, INavigator
     {
         private ViewModelBase _currentViewModel;
         public ViewModelBase CurrentViewModel
@@ -28,10 +29,5 @@ namespace Food_delivery.State.Navigators
 
         public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(this);
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }
