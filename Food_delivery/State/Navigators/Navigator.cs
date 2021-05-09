@@ -22,6 +22,7 @@ namespace Food_delivery.State.Navigators
             set
             {
                 _currentViewModel = value;
+                OnPropertyChanged(nameof(CurrentViewModel));
             }
         }
 
