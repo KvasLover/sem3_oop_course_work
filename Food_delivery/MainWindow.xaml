@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Food_delivery"
         mc:Ignorable="d"
+        
+        xmlns:controls="clr-namespace:Food_delivery.Controls"
+        
         Title="Авторизация" Height="450" Width="800">
     <Grid>
         <Button Content="Button" HorizontalAlignment="Left" Margin="65,58,0,0" VerticalAlignment="Top" Width="93" Height="43" Click="Button_Click"/>
-
+        <controls:NavigationBar/>
     </Grid>
 </Window>
