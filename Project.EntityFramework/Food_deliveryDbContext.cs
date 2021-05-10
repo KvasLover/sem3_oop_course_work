@@ -13,11 +13,13 @@ namespace Project.EntityFramework
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
 
-        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<>().OwnsOne()
+            modelBuilder.Entity<Order>().OwnsOne(a => a.delivery);
+            modelBuilder.Entity<Order>().OwnsOne(a => a.product);
+            //modelBuilder.Entity<Product>().OwnsOne(a => a.delivery);
             base.OnModelCreating(modelBuilder);
-        }*/
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

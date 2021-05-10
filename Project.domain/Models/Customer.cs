@@ -10,11 +10,11 @@ namespace Food_delivery.Models
     public class Customer
     {
         public string Full_name { get; set; }
-        public Guid id { get; set; }
+        public int id { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public string phone_number { get; set; }
         public int amount_of_orders { get; set; }
-        public ICollection<Order> Orders { get; set; }
+        //public ICollection<Order> Orders { get; set; }
     }
 }

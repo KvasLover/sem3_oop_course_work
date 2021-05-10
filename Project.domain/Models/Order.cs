@@ -11,7 +11,7 @@ namespace Food_delivery.Models
         public int id { get; set; }
         //public string Full_name { get; set; }
         public Customer customer { get; set; }
-        public string order { get; set; }
+        public Product product { get; set; }
         public string price { get; set; }
         public string date { get; set; }
         public string time { get; set; }

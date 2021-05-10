@@ -12,6 +12,7 @@ namespace Food_delivery.Models
         public string price { get; set; }
         public string avg_score { get; set; }
         public int amount_avail { get; set; }
-        public Delivery delivery { get; set; }
+        //public Delivery delivery { get; set; }
+        public string delivery { get; set; }
     }
 }
