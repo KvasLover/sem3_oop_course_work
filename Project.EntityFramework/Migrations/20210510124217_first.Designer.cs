@@ -10,7 +10,7 @@ using Project.EntityFramework;
 namespace Project.EntityFramework.Migrations
 {
     [DbContext(typeof(Food_deliveryDbContext))]
-    [Migration("20210510120818_first")]
+    [Migration("20210510124217_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
