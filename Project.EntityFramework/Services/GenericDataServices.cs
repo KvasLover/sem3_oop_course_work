@@ -25,7 +25,10 @@ namespace Project.EntityFramework.Services
             throw new NotImplementedException();
         }
 
-        public async Task<T> Get { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public async Task<T> Get (int id)
+        { 
+            throw new NotImplementedException();
+        }
 
         public async Task<IEnumerable<T>> GetAll()
         {
