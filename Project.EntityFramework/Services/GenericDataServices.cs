@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Project.EntityFramework.Services
 {
-    class GenericDataServices<T> : IDataService<T> where T : DomainObject
+    public class GenericDataServices<T> : IDataService<T> where T : DomainObject
     {
         private readonly Food_deliveryDbContextFactory _contextFactory;
 
