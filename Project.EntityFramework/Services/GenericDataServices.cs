@@ -1,4 +1,5 @@
-﻿using Project.domain.Services;
+﻿using Project.domain.Models;
+using Project.domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project.EntityFramework.Services
 {
-    class GenericDataServices<T> : IDataService<T> where T : class
+    class GenericDataServices<T> : IDataService<T> where T : DomainObject
     {
         private readonly Food_deliveryDbContextFactory _contextFactory;
 
@@ -28,13 +29,13 @@ namespace Project.EntityFramework.Services
 
         public async Task<bool> Delete(int id)
         {
-            /*using (Food_deliveryDbContext context = _contextFactory.CreateDbContext())
+            using (Food_deliveryDbContext context = _contextFactory.CreateDbContext())
             {
-                T entity = await context.Set<T>().FirstOrDefaultAsync(entity);
+                T entity = await context.Set<T>().FirstOrDefaultAsync((e) => e.Id == id);
+                context.Set<T>().Remove(entity);
                 await context.SaveChangesAsync();
-                return createEntity.Entity;
-            }*/
-            return false;
+                return true;
+            }
         }
 
         public async Task<T> Get (int id)

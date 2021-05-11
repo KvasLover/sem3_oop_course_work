@@ -6,6 +6,11 @@ using System.Text;
 
 namespace Project.EntityFramework
 {
+    /*
+     EntityFrameworkCore\Enable-Migrations
+     EntityFrameworkCore\Add-Migration *name*
+    EntityFrameworkCore\Update-Database
+     */
     public class Food_deliveryDbContext : DbContext
     {
         

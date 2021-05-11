@@ -21,7 +21,7 @@ namespace Project.EntityFramework.Migrations
 
             modelBuilder.Entity("Food_delivery.Models.Customer", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -41,19 +41,19 @@ namespace Project.EntityFramework.Migrations
                     b.Property<string>("phone_number")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Food_delivery.Models.Order", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("customerid")
+                    b.Property<int?>("customerId")
                         .HasColumnType("int");
 
                     b.Property<string>("date")
@@ -68,9 +68,9 @@ namespace Project.EntityFramework.Migrations
                     b.Property<string>("time")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
-                    b.HasIndex("customerid");
+                    b.HasIndex("customerId");
 
                     b.ToTable("Orders");
                 });
@@ -79,11 +79,14 @@ namespace Project.EntityFramework.Migrations
                 {
                     b.HasOne("Food_delivery.Models.Customer", "customer")
                         .WithMany()
-                        .HasForeignKey("customerid");
+                        .HasForeignKey("customerId");
 
                     b.OwnsOne("Food_delivery.Models.Delivery", "delivery", b1 =>
                         {
-                            b1.Property<int>("Orderid")
+                            b1.Property<int>("OrderId")
+                                .HasColumnType("int");
+
+                            b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<string>("Name")
@@ -104,17 +107,20 @@ namespace Project.EntityFramework.Migrations
                             b1.Property<string>("time_of_work")
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.HasKey("Orderid");
+                            b1.HasKey("OrderId");
 
                             b1.ToTable("Deliveries");
 
                             b1.WithOwner()
-                                .HasForeignKey("Orderid");
+                                .HasForeignKey("OrderId");
                         });
 
                     b.OwnsOne("Food_delivery.Models.Product", "product", b1 =>
                         {
-                            b1.Property<int>("Orderid")
+                            b1.Property<int>("OrderId")
+                                .HasColumnType("int");
+
+                            b1.Property<int>("Id")
                                 .HasColumnType("int");
 
                             b1.Property<int>("amount_avail")
@@ -132,12 +138,12 @@ namespace Project.EntityFramework.Migrations
                             b1.Property<string>("price")
                                 .HasColumnType("nvarchar(max)");
 
-                            b1.HasKey("Orderid");
+                            b1.HasKey("OrderId");
 
                             b1.ToTable("Products");
 
                             b1.WithOwner()
-                                .HasForeignKey("Orderid");
+                                .HasForeignKey("OrderId");
                         });
 
                     b.Navigation("customer");
