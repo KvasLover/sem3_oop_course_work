@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Food_delivery.Models
 {
-    public class Delivery
+    public class Delivery : DomainObject
     {
         public string Name { get; set; }
         public int avg_deliv_time { get; set; }

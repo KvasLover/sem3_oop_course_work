@@ -8,7 +8,7 @@ namespace Project.EntityFramework
 {
     public class Food_deliveryDbContextFactory : IDesignTimeDbContextFactory<Food_deliveryDbContext>
     {
-        public Food_deliveryDbContext CreateDbContext(string[] args)
+        public Food_deliveryDbContext CreateDbContext(string[] args = null)
         {
             var options = new DbContextOptionsBuilder<Food_deliveryDbContext>();
             options.UseSqlServer("Server=VADIM\\MSSQLSERVER_VADI;DataBase=Food_delivery;Trusted_Connection=True;");

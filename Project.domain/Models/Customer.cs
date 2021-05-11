@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.domain.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace Food_delivery.Models
 {
-    public class Customer
+    public class Customer : DomainObject
     {
         public string Full_name { get; set; }
-        public int id { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public string phone_number { get; set; }
