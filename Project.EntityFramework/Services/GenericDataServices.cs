@@ -28,12 +28,13 @@ namespace Project.EntityFramework.Services
 
         public async Task<bool> Delete(int id)
         {
-            using (Food_deliveryDbContext context = _contextFactory.CreateDbContext())
+            /*using (Food_deliveryDbContext context = _contextFactory.CreateDbContext())
             {
                 T entity = await context.Set<T>().FirstOrDefaultAsync(entity);
                 await context.SaveChangesAsync();
                 return createEntity.Entity;
-            }
+            }*/
+            return false;
         }
 
         public async Task<T> Get (int id)
